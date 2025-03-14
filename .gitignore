@@ -1,0 +1,50 @@
+# Ignore Zone.Identifier files (Windows ADS)
+*:Zone.Identifier
+
+# Ignore Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.so
+*.pyo
+*.pyd
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore virtual environments
+venv/
+.env/
+*.venv
+
+# Ignore compiled model files
+*.onnx
+*.pb
+*.h5
+*.tflite
+*.ckpt
+
+# Ignore logs and system files
+*.log
+*.out
+*.err
+.DS_Store
+Thumbs.db
+
+# Ignore build artifacts
+build/
+dist/
+*.o
+*.a
+*.lib
+*.exe
+*.dll
+*.bin
+*.dylib
+
+# Ignore secrets (Make sure to use environment variables instead)
+.env
+secrets.json
+config.yaml
+
+# Ignore Git metadata that shouldn’t be committed
+.git/
