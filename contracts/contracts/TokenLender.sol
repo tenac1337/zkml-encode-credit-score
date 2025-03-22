@@ -19,6 +19,7 @@ contract TokenLender is Halo2Verifier {
     }
 
     function submitUnderwritingDecision(
+        address user,
         bytes calldata proof,
         uint256[] calldata instances
     ) external onlyOwner {
@@ -28,9 +29,6 @@ contract TokenLender is Halo2Verifier {
         }
 
         // TODO: Tie to the user wallet address
-
-        // Get the user address
-        address user = address(0x1);
 
         // Send funds to the user
         payable(user).transfer(100);
