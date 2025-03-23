@@ -48,3 +48,5 @@ config.yaml
 
 # Ignore Git metadata that shouldn’t be committed
 .git/
+
+pk.key

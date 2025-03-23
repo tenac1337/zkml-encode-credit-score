@@ -193,6 +193,17 @@ def main():
     print("Training model...")
     train_model(model, train_X, train_y)
     
+    # ✅ Save model + preprocessors here
+    torch.save(model.state_dict(), "model.pth")
+    print("✅ Trained model saved as model.pth")
+
+    # Save the Scaler and LabelEncoders   
+    import joblib
+    joblib.dump(scaler, "scaler.joblib")
+    print("✅ Scaler saved as scaler.joblib")
+    joblib.dump(label_encoders, "label_encoders.joblib")
+    print("✅ LabelEncoders saved as label_encoders.joblib")   
+
     print("Evaluating model...")
     evaluate_model(model, test_X, test_y)
 

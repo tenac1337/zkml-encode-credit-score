@@ -1,0 +1,21 @@
+// {
+//     "Age": 35,
+//     "Gender": "Male",
+//     "Income": 85000,
+//     "Education": "Doctorate",   
+//     "Marital Status": "Married",     
+//     "Number of Children": 2,
+//     "Home Ownership": "Owned",  
+//     "Credit Score": "High"
+//   }
+
+{
+    "age": 35,
+    "income": 85000,
+    "children": 2,
+    "education": "Doctorate",
+    "gender": "Male",
+    "marital_status": "Married",
+    "home_ownership": "Owned"
+  }
+  
