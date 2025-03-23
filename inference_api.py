@@ -98,10 +98,30 @@ async def run_ezkl_pipeline():
     with open("proof.json") as f:
         return json.load(f)
 
-# Step 4: The API endpoint
+# # Step 4: The API endpoint
+# @app.post("/generate-proof")
+# async def generate_proof(data: UserData):
+#     input_tensor = preprocess_user_input(data)               # Step 1
+#     export_input_for_ezkl(model, input_tensor)               # Step 2
+#     proof = await run_ezkl_pipeline()                        # Step 3
+#     return {"status": "✅ proof generated", "proof": proof}
+
+
 @app.post("/generate-proof")
 async def generate_proof(data: UserData):
     input_tensor = preprocess_user_input(data)               # Step 1
+
+    # 🔮 Make prediction with PyTorch model
+    with torch.no_grad():
+        logits = model(input_tensor)
+        pred_class_idx = torch.argmax(logits, dim=1).item()
+        pred_class_label = label_encoders["Credit Score"].inverse_transform([pred_class_idx])[0]
+
     export_input_for_ezkl(model, input_tensor)               # Step 2
     proof = await run_ezkl_pipeline()                        # Step 3
-    return {"status": "✅ proof generated", "proof": proof}
+
+    return {
+        "status": "✅ proof generated",
+        "predicted_credit_score": pred_class_label,
+        "proof": proof
+    }
