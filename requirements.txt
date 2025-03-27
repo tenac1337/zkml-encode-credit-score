@@ -1,0 +1,8 @@
+flask
+uvicorn
+fastapi
+pandas
+joblib
+ezkl
+scikit-learn
+web3
