@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Input Form</title>
+  </head>
+  <body>
+    <h1>Enter your data</h1>
+    <form action="{{ url_for('submit') }}" method="post">
+      <input type="number" name="age" placeholder="Age" step="0.1" required>
+      <input type="number" name="income" placeholder="Income" step="0.1" required>
+      <input type="number" name="children" placeholder="Number of Children" required>
+      <input type="text" name="education" placeholder="Education" required>
+      <input type="text" name="gender" placeholder="Gender" required>
+      <input type="text" name="marital_status" placeholder="Marital Status" required>
+      <input type="text" name="home_ownership" placeholder="Home Ownership" required>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
